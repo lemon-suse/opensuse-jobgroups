@@ -26,3 +26,15 @@ scenarios:
             PUBLISH_HDD_1: opensuse-updated-%VERSION%-%ARCH%-%DESKTOP%-%BUILD%.qcow2
             OS_TEST_ISSUES: ""
             QA_HEAD_REPO: ""
+      - create_hdd_leap_gnome_autoyast:
+          testsuite: null
+          settings:
+            DESKTOP: gnome
+            HDDSIZEGB: 30
+            INSTALLATION_VALIDATION: console/autoyast_smoke
+            INSTALLONLY: 1
+            OS_TEST_ISSUES: ""
+            PUBLISH_HDD_1: opensuse-updated-%VERSION%-%ARCH%-%DESKTOP%-%BUILD%.qcow2
+            PUBLISH_PFLASH_VARS: %DISTRI%-%VERSION%-%ARCH%-%BUILD%-%DESKTOP%_ay@%MACHINE%-uefi-vars.qcow2
+            QEMURAM: 2048
+            YAML_SCHEDULE: schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
